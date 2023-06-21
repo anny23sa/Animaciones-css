@@ -1,0 +1,159 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+}
+.grid-container{
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "sidebar"
+    "main"
+    "footer";
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr 1fr 6,5fr 1fr;
+}
+.header{
+    grid-area: header;
+    background-color: rgb(214, 248, 188);
+    width: 400px;
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background-color: rgb(104, 235, 159);
+}
+.main{
+    grid-area: main;
+    background-color: rgb(46, 245, 195);
+}
+.footer{
+    grid-area: footer;
+    background-color: rgb(104, 235, 159);
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+@keyframes rotate {from {transform: rotate(0deg);}
+        to {transform: rotate(360deg);}}
+    @-webkit-keyframes rotate {from {-webkit-transform: rotate(0deg);}
+        to {-webkit-transform: rotate(360deg);}}
+    .hada5{
+        -webkit-animation: 3s rotate linear infinite;
+        animation: 3s rotate linear infinite;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+}
+.grid-container-header-menu{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+.menu_items_a ul li{
+    list-style-type: none;
+    display: flex;
+}
+.menu_item{
+    display: none;
+}
+.filtro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-select{
+    width: 60%;
+}
+
+.cards{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    align-content: space-evenly;
+    
+}
+.card-img-top{
+    height: 320px;
+    width: 286px;
+    filter:grayscale(100%);
+    transition: filter 0.5s ease;
+}
+.card-img-top:hover{
+    filter: grayscale(0%);
+}
+
+.footer-text-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 576px) {
+    .grid-container{
+        display: grid;
+        background-color: white;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 15% 80% 10%;
+        grid-template-areas:
+        "header sidebar"
+        "header main"
+        "footer footer"
+    }
+    .grid-container-header-menu{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    .grid-container-header-menu{
+        display: flex;
+        justify-content: start;
+        margin: 40px;
+    }
+    .logo{
+        display: block;
+        justify-content: flex-start;
+    }
+    .menu_item{
+        display: flex;
+        flex-direction: column;
+    }
+    .menu_icono_hamburguesa{
+        display: none;
+    }
+    .menu_items_a ul li{
+        font-size: 14px;
+        padding-top: 40%;
+    }
+    .main{
+        display: grid;
+        padding: 5px;
+    }
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        background-size: cover;
+       
+        overflow-y: hidden;
+    }
+    .card{
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card img{
+        width: 200px;
+        height: 200px;
+    }
+    img .card-img-top{
+        padding: 5px;
+        width: 50px;
+    }
+}
